@@ -512,7 +512,7 @@ void extract(const Input& in,
         if (mat_idx != -1) {
           const auto& mat = model.materials[mat_idx];
           auto mat_pat = custom_props_to_pat(mat.extras, mat.name);
-          if (mat_pat.set) {
+          if (mat.extras.Has("set_collision") && mat.extras.Get("set_collision").Get<int>()) {
             pat = mat_pat;
           }
         }
