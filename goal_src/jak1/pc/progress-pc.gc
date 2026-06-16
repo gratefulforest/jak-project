@@ -429,7 +429,7 @@
        (new 'static
             'game-option
             :option-type (game-option-type slider)
-            :name (text-id controller-led-strength)
+            :name (text-id controller-led-brightness)
             :scale #t
             :param1 0.0
             :param2 100.0
