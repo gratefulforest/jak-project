@@ -298,7 +298,7 @@ This gives us more freedom to write code how we want.
         :min-value 0.0
         :max-value 100.0
         :step 1.0
-        :show-decimal? #f
+        :show-decimal? #t
         :get-value-fn (lambda () (-> *pc-settings* controller-led-brightness))
         :on-confirm (lambda ((val float))
           (set! (-> *pc-settings* controller-led-brightness) val)
