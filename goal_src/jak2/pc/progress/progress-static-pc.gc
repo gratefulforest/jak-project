@@ -203,6 +203,7 @@ This gives us more freedom to write code how we want.
         :show-decimal? #f
         :get-value-fn (lambda () (-> *pc-settings* stick-sensitivity))
         :on-confirm (lambda ((val float))
+          (pc-set-axis-scale! (/ val 100.0))
           (set! (-> *pc-settings* stick-sensitivity) val)
           (pc-settings-save)))
       (new 'static 'menu-generic-boolean-option
@@ -221,7 +222,6 @@ This gives us more freedom to write code how we want.
         :show-decimal? #f
         :get-value-fn (lambda () (-> *pc-settings* controller-led-brightness))
         :on-confirm (lambda ((val float))
-          (pc-set-axis-scale! (/ val 100.0))
           (set! (-> *pc-settings* controller-led-brightness) val)
           (pc-settings-save)))
       (new 'static 'menu-generic-boolean-option
